@@ -38,6 +38,7 @@ header {
     position: fixed;
     width: 100%;
     height: max-content;
+    z-index: 999;
 }
 
 nav {
@@ -109,13 +110,16 @@ ul a:hover {
     letter-spacing: 1%;
     text-align: center;
 
+    transition: color 1700ms ease-out;
     transition: background-color 1700ms ease-out;
 }
 
 .signin:hover {
+    color: var(--t3);
     background-color: var(--act1);
     border: none;
 
+    transition: color 1700ms ease-in;
     transition: background-color 1700ms ease-in;
 }
 
@@ -132,19 +136,32 @@ ul a:hover {
     letter-spacing: 1%;
     text-align: center;
 
+    transition: color 1700ms ease-out;
     transition: background-color 1700ms ease-out;
 }
 
 .signup:hover {
     background-color: transparent;
     border: 1px solid var(--act1);
+    color: white;
 
+    transition: color 1700ms ease-in;
     transition: background-color 1700ms ease-in;
+}
+
+.scrolled-up {
+    top: 0;
+    transition: all 0.3s ease;
+}
+
+.scrolled-down {
+    opacity: 0;
+    transition: all 0.3s ease;
 }
 
 
 
-#hero {
+#Hero {
     width: 100%;
     height: 100vh;
 
@@ -184,7 +201,7 @@ ul a:hover {
     text-align: center;
 }
 
-.email {
+.all_hero .email {
     width: 70%;
     height: 60px;
 
@@ -195,14 +212,14 @@ ul a:hover {
     align-items: center;
 }
 
-.email input {
+.all_hero .email input {
     width: 70%;
     background-color: transparent;
     border: none;
     margin-left: 5%;
 }
 
-.email button {
+.all.email .email button {
     width: 20%;
     height: 80%;
     background-color: var(--act1);
@@ -262,12 +279,370 @@ ul a:hover {
 
 
 
+#About {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.a_content {
+    position: relative;
+    width: 90%;
+    height: 90%;
+
+    background-color: var(--act1);
+    border: none;
+    border-radius: 12px;
+    text-align: center;
+    overflow-y: hidden;
+    box-shadow: 0px 4px 4px 0px #00000040;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.a_content h2 {
+    color: var(--t3);
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.a_slogan {
+    color: var(--t3);
+    font-weight: 600;
+    font-size: 4rem;
+}
+
+.a_description {
+    color: var(--t3);
+    font-weight: 400;
+    margin-bottom: 10px;
+}
 
 
 
+#Job {
+    width: 100%;
+    height: 100vh;
+
+    margin-bottom: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.j_header {
+    width: 40%;
+    height: max-content;
+
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.j_header h3 {
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.j_header p {
+    color: var(--t1);
+    margin: 3% 20% 5% 20%;
+}
+
+.j_header a {
+    border: 1px solid var(--act1);
+    border-radius: 12px;
+    padding: 12px 32px 12px 32px;
+    cursor: pointer;
+}
+
+#Job .cards {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    row-gap: 15px;
+    column-gap: 10px;
+}
+
+#Job .card {
+    height: max-content;
+    width: 70%;
+
+    padding: 10px;
+    background-color: var(--bg2);
+    border: none;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    transition:
+    transform 2000ms ease-out,
+    box-shadow 1000ms ease-out;
+}
+
+#Job .card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 5px var(--act1);
+
+    transition:
+    transform 2000ms ease-in,
+    box-shadow 1000ms ease-in;
+}
+
+#Job .card .card_title {
+    margin: 10px 0;
+}
+
+#Job .card .card_description {
+    color: var(--t1);
+    font-size: 0.9rem;
+}
 
 
 
+#AI {
+    width: 100%;
+    height: 100vh;
+
+    background-color: #6DE754;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#AI .boxs {
+    width: 600px;
+    height: 600px;
+
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#AI .box {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#AI .box h3 {
+    font-weight: 600;
+    color: var(--t3);
+}
+
+#AI .box p {
+    font-weight: 400;
+    color: var(--t3);
+}
+
+#AI .box a {
+    text-align: center;
+    color: var(--t3);
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 10px;
+
+    transition:
+    background-color 1000ms ease-out,
+    color 1000ms ease-out;
+}
+
+#AI .box a:hover {
+    background-color: var(--t3);
+    color: var(--act1);
+
+    transition:
+    background-color 1000ms ease-in,
+    color 1000ms ease-in;
+}
+
+#AI .box1 {
+    width: 80%;
+    height: 80%;
+}
+
+
+
+#CV {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cv_container {
+    height: 30%;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cv_container h3 {
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.cv_container p {
+    font-weight: 400;
+    letter-spacing: 2%;
+    color: var(--t1);
+}
+
+.cv_container a {
+    width: max-content;
+    border: 1px solid var(--act1);
+    border-radius: 12px;
+    padding: 10px;
+
+
+    transition:
+    background-color 1000ms ease-out,
+    color 1000ms ease-out;
+}
+
+.cv_container a:hover {
+    background-color: var(--act1);
+    color: var(--t3);
+
+    transition:
+    background-color 1000ms ease-in,
+    color 1000ms ease-in;
+}
+
+
+
+#Footer {
+    width: 100%;
+    height: 100vh;
+
+    background-color: #6DE754;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.f_header {
+    width: 30%;
+    height: max-content;
+
+    text-align: center;
+    margin-bottom: 50px;
+
+}
+
+.f_header h2 {
+    font-weight: 600;
+    font-size: 4rem;
+    color: var(--t3);
+}
+
+.f_header p {
+    font-weight: 400;
+    letter-spacing: 2%;
+    color: var(--t3);
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.f_header a {
+    padding: 10px 25px;
+    border: 1px solid black;
+    border-radius: 12px;
+    color: var(--t3);
+
+    transition:
+    background-color 1000ms ease-out,
+    color 1000ms ease-out;
+}
+
+.f_header a:hover {
+    background-color: var(--bg);
+    color: var(--t2);
+
+    transition:
+    background-color 1000ms ease-in,
+    color 1000ms ease-in;
+}
+
+.f_content {
+    width: 100%;
+    height: 40%;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.f_content .container {
+    padding: 0 10px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.f_content .container p {
+    color: var(--t3);
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.f_content .container a {
+    color: var(--t3);
+
+    transition:
+    text-decoration 1000ms ease-out,
+    color 1000ms ease-out;
+}
+
+.f_content .container a:hover {
+    text-decoration: underline;
+    color: var(--t2);
+
+    transition:
+    text-decoration 500ms ease-in,
+    color 1000ms ease-in;
+}
+
+.f_content .support .socials_icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.f_content .support .email {
+    font-size: 1rem;
+}
+
+#Footer .ligne {
+    width: 80%;
+    height: 1px;
+    background-color: var(--bg);
+    margin: 10px;
+}
+
+.copywriting a {
+    color: var(--t3);
+}
 
 
 

@@ -219,7 +219,7 @@ ul a:hover {
     margin-left: 5%;
 }
 
-.all.email .email button {
+.all_hero .email button {
     width: 20%;
     height: 80%;
     background-color: var(--act1);
